@@ -27,3 +27,8 @@ yarn-error.log
 
 # Machine-local Claude Code settings
 /.claude/settings.local.json
+
+# Filament published assets (regenerated on composer install via filament:upgrade)
+/public/css/filament
+/public/js/filament
+/public/fonts/filament

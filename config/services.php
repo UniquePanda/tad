@@ -39,8 +39,6 @@ return [
         'client_id' => env('SPOTIFY_CLIENT_ID'),
         'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
         'redirect' => env('SPOTIFY_REDIRECT_URI'),
-        'source_playlist_id' => env('SPOTIFY_SOURCE_PLAYLIST_ID'),
-        // Scopes for the three core features (see docs/briefing.md §3)
         'scopes' => [
             'user-read-playback-state',
             'user-modify-playback-state',

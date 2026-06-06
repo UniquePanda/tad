@@ -18,6 +18,8 @@ export interface NavItem {
 
 export interface SharedData {
     name: string;
+    locale: string;
+    availableLocales: string[];
     auth: Auth;
     ziggy: {
         location: string;

@@ -6,6 +6,8 @@ import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { initializeTheme } from './composables/useAppearance';
+import { createI18nInstance } from './i18n';
+import type { SharedData } from './types';
 
 // Extend ImportMeta interface for Vite...
 declare module 'vite/client' {
@@ -26,9 +28,12 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob<DefineComponent>('./pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
+        const locale = (props.initialPage.props as unknown as SharedData).locale ?? 'en';
+
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(createI18nInstance(locale))
             .mount(el);
     },
     progress: {

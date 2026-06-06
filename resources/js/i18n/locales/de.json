@@ -1,0 +1,36 @@
+{
+    "auth": {
+        "login": {
+            "title": "Bei deinem Konto anmelden",
+            "description": "Gib unten deine E-Mail und dein Passwort ein, um dich anzumelden",
+            "email": "E-Mail-Adresse",
+            "password": "Passwort",
+            "remember": "Angemeldet bleiben",
+            "submit": "Anmelden",
+            "noAccount": "Noch kein Konto?",
+            "signUp": "Registrieren"
+        },
+        "register": {
+            "title": "Konto erstellen",
+            "description": "Gib unten deine Daten ein, um dein Konto zu erstellen",
+            "username": "Benutzername",
+            "email": "E-Mail-Adresse",
+            "password": "Passwort",
+            "confirmPassword": "Passwort bestätigen",
+            "submit": "Konto erstellen",
+            "haveAccount": "Du hast bereits ein Konto?",
+            "logIn": "Anmelden"
+        },
+        "verifyEmail": {
+            "title": "E-Mail bestätigen",
+            "description": "Bitte bestätige deine E-Mail-Adresse über den Link, den wir dir gerade per E-Mail geschickt haben.",
+            "linkSent": "Ein neuer Bestätigungslink wurde an die bei der Registrierung angegebene E-Mail-Adresse gesendet.",
+            "resend": "Bestätigungs-E-Mail erneut senden",
+            "logout": "Abmelden"
+        }
+    },
+    "dashboard": {
+        "subtitle": "Das Fundament steht.",
+        "logout": "Abmelden"
+    }
+}

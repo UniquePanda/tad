@@ -86,6 +86,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Available Locales
+    |--------------------------------------------------------------------------
+    |
+    | The locales the application offers in the UI. Keyed by locale code with
+    | a human-readable native label. To add a language, add an entry here and
+    | a matching message file in resources/js/i18n/locales/<code>.json.
+    |
+    */
+
+    'available_locales' => [
+        'en' => 'English',
+        'de' => 'Deutsch',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
     |
