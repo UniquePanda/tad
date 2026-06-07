@@ -1,6 +1,7 @@
 {
     "private": true,
     "type": "module",
+    "packageManager": "pnpm@10.33.0",
     "scripts": {
         "build": "vite build",
         "build:ssr": "vite build && vite build --ssr",
@@ -52,5 +53,11 @@
         "@rollup/rollup-linux-x64-gnu": "4.9.5",
         "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
         "lightningcss-linux-x64-gnu": "^1.29.1"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild",
+            "vue-demi"
+        ]
     }
 }
