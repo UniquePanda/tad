@@ -16,11 +16,16 @@ export interface NavItem {
     isActive?: boolean;
 }
 
+export type SpotifyConnectionStatus = 'spotify-connected' | 'spotify-disconnected' | 'spotify-connect-failed';
+
 export interface SharedData {
     name: string;
     locale: string;
     availableLocales: string[];
     auth: Auth;
+    spotify: {
+        connected: boolean;
+    };
     ziggy: {
         location: string;
         url: string;

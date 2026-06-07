@@ -2,6 +2,7 @@
 /node_modules
 /public/build
 /public/hot
+/resources/js/ziggy.js
 /public/storage
 /storage/*.key
 /storage/pail
@@ -23,8 +24,9 @@ yarn-error.log
 /.vscode
 /.zed
 
-# Local project briefing (not versioned)
+# Local project docs (not versioned)
 /docs/briefing.md
+/docs/spotify-terms.md
 
 # Machine-local Claude Code settings
 /.claude/settings.local.json

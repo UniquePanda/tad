@@ -43,6 +43,9 @@ class HandleInertiaRequests extends Middleware
             ],
             'locale' => app()->getLocale(),
             'availableLocales' => array_keys(config('app.available_locales')),
+            'spotify' => [
+                'connected' => $request->user()?->spotifyAuth()->exists() ?? false,
+            ],
         ];
     }
 }

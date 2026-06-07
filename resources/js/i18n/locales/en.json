@@ -31,6 +31,17 @@
     },
     "dashboard": {
         "subtitle": "Foundation is in place.",
-        "logout": "Log out"
+        "logout": "Log out",
+        "spotify": {
+            "connected": "Spotify connected",
+            "notConnected": "Spotify is not connected",
+            "connect": "Connect Spotify",
+            "disconnect": "Disconnect Spotify",
+            "status": {
+                "connected": "Spotify was connected successfully.",
+                "disconnected": "Spotify was disconnected.",
+                "failed": "Connecting to Spotify failed. Please try again."
+            }
+        }
     }
 }

@@ -31,6 +31,17 @@
     },
     "dashboard": {
         "subtitle": "Das Fundament steht.",
-        "logout": "Abmelden"
+        "logout": "Abmelden",
+        "spotify": {
+            "connected": "Spotify verbunden",
+            "notConnected": "Spotify ist nicht verbunden",
+            "connect": "Spotify verbinden",
+            "disconnect": "Spotify trennen",
+            "status": {
+                "connected": "Spotify wurde erfolgreich verbunden.",
+                "disconnected": "Spotify wurde getrennt.",
+                "failed": "Die Verbindung mit Spotify ist fehlgeschlagen. Bitte versuche es erneut."
+            }
+        }
     }
 }
