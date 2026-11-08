@@ -1,0 +1,8 @@
+# Supply-chain cooldown: only install package versions that are at least 3 days
+# old, so freshly published (possibly compromised) releases can't be pulled in
+# immediately. Value is in MINUTES — 3 days = 4320.
+# Docs: https://pnpm.io/settings/dependency-resolution#minimumreleaseage
+minimumReleaseAge: 4320
+# Add package names here to exempt them from the cooldown (e.g. for urgent fixes):
+# minimumReleaseAgeExclude:
+#   - some-package
