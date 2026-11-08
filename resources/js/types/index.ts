@@ -18,6 +18,31 @@ export interface NavItem {
 
 export type SpotifyConnectionStatus = 'spotify-connected' | 'spotify-disconnected' | 'spotify-connect-failed';
 
+export type WatchlistStatus = 'watchlist-show-added' | 'watchlist-show-removed' | 'watchlist-refreshed' | 'watchlist-refresh-failed';
+
+export type ReleaseDatePrecision = 'year' | 'month' | 'day';
+
+export interface WatchedShow {
+    id: number;
+    name: string;
+    image_url: string | null;
+    last_checked_at: string | null;
+    unseen_releases_count: number;
+}
+
+export interface NewRelease {
+    id: number;
+    spotify_album_id: string;
+    name: string;
+    image_url: string | null;
+    release_date: string;
+    release_date_precision: ReleaseDatePrecision;
+    show: {
+        id: number;
+        name: string;
+    };
+}
+
 export interface SharedData {
     name: string;
     locale: string;

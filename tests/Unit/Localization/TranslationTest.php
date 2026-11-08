@@ -15,6 +15,18 @@ class TranslationTest extends TestCase
         $this->assertNotSame($en, $de, 'German auth.failed should differ from English.');
     }
 
+    public function test_watchlist_messages_are_translated_to_german(): void
+    {
+        $en = require lang_path('en/watchlist.php');
+        $de = require lang_path('de/watchlist.php');
+
+        $this->assertSame(array_keys($en), array_keys($de), 'en and de watchlist messages must define the same keys.');
+
+        foreach (array_keys($en) as $key) {
+            $this->assertNotSame($en[$key], $de[$key], "German watchlist.{$key} should differ from English.");
+        }
+    }
+
     public function test_validation_messages_are_translated_to_german(): void
     {
         $en = __('validation.required', ['attribute' => 'email'], 'en');

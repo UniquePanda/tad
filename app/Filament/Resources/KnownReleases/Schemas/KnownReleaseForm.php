@@ -31,6 +31,7 @@ class KnownReleaseForm
                     ->numeric(),
                 FileUpload::make('image_url')
                     ->image(),
+                DateTimePicker::make('seen_at'),
                 DateTimePicker::make('notified_at'),
             ]);
     }

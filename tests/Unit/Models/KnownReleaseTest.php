@@ -54,6 +54,30 @@ class KnownReleaseTest extends TestCase
         $this->assertInstanceOf(Carbon::class, $this->makeRelease()->fresh()->notified_at);
     }
 
+    public function test_seen_at_is_cast_to_datetime(): void
+    {
+        $this->assertInstanceOf(Carbon::class, $this->makeRelease(['seen_at' => now()])->fresh()->seen_at);
+    }
+
+    public function test_seen_at_defaults_to_null(): void
+    {
+        $this->assertNull($this->makeRelease()->fresh()->seen_at);
+    }
+
+    public function test_unseen_scope_only_returns_releases_without_seen_at(): void
+    {
+        $unseen = $this->makeRelease();
+        $unseen->show->knownReleases()->create([
+            'spotify_album_id' => 'album_2',
+            'name' => 'Episode 2',
+            'release_date' => '2024-06',
+            'release_date_precision' => ReleaseDatePrecision::Month,
+            'seen_at' => now(),
+        ]);
+
+        $this->assertSame([$unseen->id], KnownRelease::unseen()->pluck('id')->all());
+    }
+
     public function test_show_relation(): void
     {
         $release = $this->makeRelease();

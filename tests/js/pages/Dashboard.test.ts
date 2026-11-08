@@ -14,11 +14,12 @@ const route = (name: string) => `/${name}`;
 
 vi.mock('@inertiajs/vue3', () => ({
     Head: { template: '<div />' },
+    Link: { props: ['href'], template: '<a :href="href"><slot /></a>' },
     usePage: () => mocks.page,
     router: { post: vi.fn(), delete: vi.fn() },
 }));
 
-function mountDashboard(props: { status?: string } = {}) {
+function mountDashboard(props: { status?: string; unseenReleaseCount?: number } = {}) {
     return mount(Dashboard, {
         props,
         global: {
@@ -73,6 +74,18 @@ describe('Dashboard.vue', () => {
         expect(mountDashboard({ status: 'spotify-connected' }).text()).toContain('Spotify was connected successfully.');
         expect(mountDashboard({ status: 'spotify-disconnected' }).text()).toContain('Spotify was disconnected.');
         expect(mountDashboard({ status: 'spotify-connect-failed' }).text()).toContain('Connecting to Spotify failed. Please try again.');
+    });
+
+    it('links to the watchlist and new episodes with the unseen count', () => {
+        const wrapper = mountDashboard({ unseenReleaseCount: 4 });
+
+        expect(wrapper.find('a[href="/shows.index"]').text()).toBe('Watchlist');
+        expect(wrapper.find('a[href="/releases.index"]').text()).toContain('New episodes');
+        expect(wrapper.find('[data-test="unseen-count"]').text()).toBe('(4)');
+    });
+
+    it('hides the unseen count when there are no new episodes', () => {
+        expect(mountDashboard({ unseenReleaseCount: 0 }).find('[data-test="unseen-count"]').exists()).toBe(false);
     });
 
     it('renders no status message when no status is given', () => {

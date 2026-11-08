@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('release_date_precision');
             $table->unsignedInteger('total_tracks')->nullable();
             $table->string('image_url')->nullable();
+            $table->timestamp('seen_at')->nullable();
             $table->timestamp('notified_at')->nullable();
             $table->timestamps();
 

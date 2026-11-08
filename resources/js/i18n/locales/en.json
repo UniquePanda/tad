@@ -42,6 +42,44 @@
                 "disconnected": "Spotify was disconnected.",
                 "failed": "Connecting to Spotify failed. Please try again."
             }
+        },
+        "nav": {
+            "watchlist": "Watchlist",
+            "newReleases": "New episodes"
         }
+    },
+    "watchlist": {
+        "title": "Watchlist",
+        "back": "Back to dashboard",
+        "notConnected": "Connect Spotify on the dashboard to add and check shows.",
+        "add": {
+            "label": "Spotify artist link",
+            "placeholder": "https://open.spotify.com/artist/…",
+            "hint": "Paste the link of a series' artist page (Share → Copy link).",
+            "submit": "Add show"
+        },
+        "refresh": "Check for new episodes",
+        "newReleasesLink": "Show new episodes",
+        "empty": "Your watchlist is empty. Add a show above.",
+        "lastChecked": "Last checked: {date}",
+        "neverChecked": "Not checked yet",
+        "unseen": "{count} new",
+        "remove": "Remove",
+        "confirmRemove": "Remove \"{name}\" from your watchlist?",
+        "status": {
+            "added": "Show added to your watchlist.",
+            "removed": "Show removed from your watchlist.",
+            "refreshed": "No new episodes found. | One new episode found. | {count} new episodes found.",
+            "refreshFailed": "Checking for new episodes failed. Please reconnect Spotify."
+        }
+    },
+    "releases": {
+        "title": "New episodes",
+        "back": "Back to dashboard",
+        "watchlistLink": "Watchlist",
+        "empty": "No new episodes — you're all caught up.",
+        "markSeen": "Mark as seen",
+        "markAllSeen": "Mark all as seen",
+        "openInSpotify": "Open in Spotify"
     }
 }

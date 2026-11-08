@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Models;
 
+use App\Enums\ReleaseDatePrecision;
 use App\Enums\ShowSource;
 use App\Models\PlaybackProgress;
 use App\Models\Show;
@@ -40,6 +41,38 @@ class UserTest extends TestCase
         ]);
 
         $this->assertTrue($user->shows->contains($show));
+    }
+
+    public function test_known_releases_relation_spans_only_own_shows(): void
+    {
+        $user = User::factory()->create();
+        $show = Show::create([
+            'user_id' => $user->id,
+            'spotify_artist_id' => 'artist_1',
+            'name' => 'Some Series',
+            'source' => ShowSource::Manual,
+        ]);
+        $release = $show->knownReleases()->create([
+            'spotify_album_id' => 'album_1',
+            'name' => 'Episode 1',
+            'release_date' => '2024',
+            'release_date_precision' => ReleaseDatePrecision::Year,
+        ]);
+
+        $otherShow = Show::create([
+            'user_id' => User::factory()->create()->id,
+            'spotify_artist_id' => 'artist_1',
+            'name' => 'Some Series',
+            'source' => ShowSource::Manual,
+        ]);
+        $otherShow->knownReleases()->create([
+            'spotify_album_id' => 'album_1',
+            'name' => 'Episode 1',
+            'release_date' => '2024',
+            'release_date_precision' => ReleaseDatePrecision::Year,
+        ]);
+
+        $this->assertSame([$release->id], $user->knownReleases->pluck('id')->all());
     }
 
     public function test_playback_progress_relation(): void

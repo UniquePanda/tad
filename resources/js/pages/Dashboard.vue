@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TextLink from '@/components/TextLink.vue';
 import { Button } from '@/components/ui/button';
 import type { SharedData, SpotifyConnectionStatus } from '@/types';
 import { Head, router, usePage } from '@inertiajs/vue3';
@@ -7,6 +8,7 @@ import { useI18n } from 'vue-i18n';
 
 const props = defineProps<{
     status?: SpotifyConnectionStatus | null;
+    unseenReleaseCount?: number;
 }>();
 
 const { t } = useI18n();
@@ -55,6 +57,14 @@ const disconnectSpotify = () => router.delete(route('spotify.disconnect'));
                     <Button @click="connectSpotify">{{ $t('dashboard.spotify.connect') }}</Button>
                 </template>
             </div>
+
+            <nav class="flex justify-center gap-4 text-sm">
+                <TextLink :href="route('shows.index')">{{ $t('dashboard.nav.watchlist') }}</TextLink>
+                <TextLink :href="route('releases.index')">
+                    {{ $t('dashboard.nav.newReleases') }}
+                    <span v-if="unseenReleaseCount" data-test="unseen-count">({{ unseenReleaseCount }})</span>
+                </TextLink>
+            </nav>
 
             <Button variant="outline" @click="logout">{{ $t('dashboard.logout') }}</Button>
         </div>

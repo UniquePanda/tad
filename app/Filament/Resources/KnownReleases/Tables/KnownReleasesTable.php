@@ -30,6 +30,9 @@ class KnownReleasesTable
                     ->numeric()
                     ->sortable(),
                 ImageColumn::make('image_url'),
+                TextColumn::make('seen_at')
+                    ->dateTime()
+                    ->sortable(),
                 TextColumn::make('notified_at')
                     ->dateTime()
                     ->sortable(),

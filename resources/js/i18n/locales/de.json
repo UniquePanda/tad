@@ -42,6 +42,44 @@
                 "disconnected": "Spotify wurde getrennt.",
                 "failed": "Die Verbindung mit Spotify ist fehlgeschlagen. Bitte versuche es erneut."
             }
+        },
+        "nav": {
+            "watchlist": "Merkliste",
+            "newReleases": "Neue Folgen"
         }
+    },
+    "watchlist": {
+        "title": "Merkliste",
+        "back": "Zurück zum Dashboard",
+        "notConnected": "Verbinde Spotify im Dashboard, um Serien hinzuzufügen und zu prüfen.",
+        "add": {
+            "label": "Spotify-Künstlerlink",
+            "placeholder": "https://open.spotify.com/artist/…",
+            "hint": "Füge den Link der Künstlerseite einer Serie ein (Teilen → Link kopieren).",
+            "submit": "Serie hinzufügen"
+        },
+        "refresh": "Nach neuen Folgen suchen",
+        "newReleasesLink": "Neue Folgen anzeigen",
+        "empty": "Deine Merkliste ist leer. Füge oben eine Serie hinzu.",
+        "lastChecked": "Zuletzt geprüft: {date}",
+        "neverChecked": "Noch nicht geprüft",
+        "unseen": "{count} neu",
+        "remove": "Entfernen",
+        "confirmRemove": "„{name}“ von deiner Merkliste entfernen?",
+        "status": {
+            "added": "Serie wurde zu deiner Merkliste hinzugefügt.",
+            "removed": "Serie wurde von deiner Merkliste entfernt.",
+            "refreshed": "Keine neuen Folgen gefunden. | Eine neue Folge gefunden. | {count} neue Folgen gefunden.",
+            "refreshFailed": "Die Suche nach neuen Folgen ist fehlgeschlagen. Bitte verbinde Spotify erneut."
+        }
+    },
+    "releases": {
+        "title": "Neue Folgen",
+        "back": "Zurück zum Dashboard",
+        "watchlistLink": "Merkliste",
+        "empty": "Keine neuen Folgen – du bist auf dem neuesten Stand.",
+        "markSeen": "Als gesehen markieren",
+        "markAllSeen": "Alle als gesehen markieren",
+        "openInSpotify": "In Spotify öffnen"
     }
 }
